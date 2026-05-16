@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hero Quick-Start — Smooth Scroll + Animated Text Reveal</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <p class="eyebrow" data-reveal>Introducing</p>
+        <h1 class="headline" data-split>
+          Design&nbsp;websites that move like&nbsp;they mean&nbsp;it.
+        </h1>
+        <p class="sub" data-reveal data-delay="0.6">
+          A toolkit of motion primitives — smooth scrolling, kinetic type,
+          and scroll-driven reveals — wired up and ready to ship.
+        </p>
+        <a class="cta" href="#next" data-reveal data-delay="0.9">
+          See it scroll <span aria-hidden="true">↓</span>
+        </a>
+      </section>
+
+      <section id="next" class="next">
+        <h2 data-reveal>Keep scrolling — Lenis handles the easing.</h2>
+        <p data-reveal data-delay="0.2">
+          Every transition is GPU-friendly and respects
+          <code>prefers-reduced-motion</code>.
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "name": "claude-connection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:42663/git/SupiLove/Claude-connection"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@barba/core": "^2.10.3",
+    "@formkit/auto-animate": "^0.9.0",
+    "animejs": "^4.4.1",
+    "aos": "^2.3.4",
+    "canvas-confetti": "^1.9.4",
+    "countup.js": "^2.10.0",
+    "framer-motion": "^12.38.0",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.23",
+    "scrollreveal": "^4.0.9",
+    "split-type": "^0.3.4",
+    "three": "^0.184.0",
+    "tsparticles": "^4.0.2",
+    "typed.js": "^3.0.0",
+    "vanta": "^0.5.24",
+    "vivus": "^0.4.6"
+  }
+}
