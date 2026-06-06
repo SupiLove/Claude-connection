@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 150" width="560" height="150" role="img" aria-label="Comuno Lab — Marketing, Communication & Change">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Inter:wght@500&amp;display=swap');
+      .word{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:78px; }
+      .lab { font-family:'Cormorant Garamond',serif; font-weight:600; font-style:italic; font-size:78px; fill:#A6863A; }
+      .ink { fill:#1C1A16; }
+      .tag { font-family:'Inter',sans-serif; font-weight:500; font-size:14px; letter-spacing:.28em; fill:#A6863A; }
+    </style>
+  </defs>
+  <g transform="translate(8,18) scale(0.95)">
+    <circle cx="95.10" cy="79.18" r="1.70" fill="#2A2620"/>
+  <circle cx="91.65" cy="84.56" r="1.78" fill="#322C22"/>
+  <circle cx="87.37" cy="89.34" r="1.88" fill="#3B3324"/>
+  <circle cx="82.37" cy="93.38" r="1.99" fill="#433925"/>
+  <circle cx="76.79" cy="96.57" r="2.10" fill="#4B4027"/>
+  <circle cx="70.76" cy="98.84" r="2.21" fill="#544629"/>
+  <circle cx="64.44" cy="100.12" r="2.33" fill="#5C4D2B"/>
+  <circle cx="57.98" cy="100.37" r="2.46" fill="#64532C"/>
+  <circle cx="51.56" cy="99.60" r="2.58" fill="#6D5A2E"/>
+  <circle cx="45.34" cy="97.80" r="2.71" fill="#756030"/>
+  <circle cx="39.47" cy="95.03" r="2.84" fill="#7E6732"/>
+  <circle cx="34.11" cy="91.36" r="2.97" fill="#866D33"/>
+  <circle cx="29.39" cy="86.87" r="3.11" fill="#8E7435"/>
+  <circle cx="25.45" cy="81.68" r="3.24" fill="#977A37"/>
+  <circle cx="22.38" cy="75.92" r="3.38" fill="#9F8139"/>
+  <circle cx="20.26" cy="69.73" r="3.52" fill="#A7873A"/>
+  <circle cx="19.16" cy="63.28" r="3.66" fill="#AB8B3C"/>
+  <circle cx="19.10" cy="56.72" r="3.80" fill="#B08F3E"/>
+  <circle cx="20.09" cy="50.23" r="3.94" fill="#B49340"/>
+  <circle cx="22.10" cy="43.97" r="4.08" fill="#B99742"/>
+  <circle cx="25.09" cy="38.10" r="4.23" fill="#BE9B44"/>
+  <circle cx="28.98" cy="32.77" r="4.38" fill="#C29F46"/>
+  <circle cx="33.68" cy="28.13" r="4.52" fill="#C7A348"/>
+  <circle cx="39.07" cy="24.29" r="4.67" fill="#CBA74A"/>
+  <circle cx="45.01" cy="21.35" r="4.82" fill="#D0AB4C"/>
+  <circle cx="51.35" cy="19.40" r="4.97" fill="#D5AF4E"/>
+  <circle cx="57.93" cy="18.48" r="5.12" fill="#D9B351"/>
+  <circle cx="64.58" cy="18.62" r="5.27" fill="#DBB859"/>
+  <circle cx="71.13" cy="19.82" r="5.43" fill="#DEBD61"/>
+  <circle cx="77.42" cy="22.05" r="5.58" fill="#E1C269"/>
+  <circle cx="83.28" cy="25.26" r="5.73" fill="#E4C772"/>
+  <circle cx="88.56" cy="29.37" r="5.89" fill="#E6CB7A"/>
+  <circle cx="93.13" cy="34.28" r="6.04" fill="#E9D082"/>
+  <circle cx="96.86" cy="39.86" r="6.20" fill="#ECD58A"/>
+  </g>
+  <text x="140" y="78" class="word ink">Comuno <tspan class="lab">Lab</tspan></text>
+  <text x="143" y="108" class="tag">MARKETING · COMMUNICATION · CHANGE</text>
+</svg>
