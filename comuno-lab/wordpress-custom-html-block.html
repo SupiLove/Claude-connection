@@ -1,0 +1,660 @@
+<!-- ===== COMUNO LAB — paste this whole block into ONE "Custom HTML" block ===== -->
+<!-- Recommended: create a new Page, set template to a blank / full-width canvas. -->
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   Comuno Lab — white & gold boutique agency
+   ========================================================= */
+
+:root{
+  --paper:      #FBF9F4;   /* warm off-white */
+  --paper-2:    #FFFFFF;
+  --ink:        #1C1A16;   /* warm near-black */
+  --ink-soft:   #4A463E;
+  --muted:      #8A8478;
+  --line:       #E7E1D4;
+  --gold:       #C2A04C;   /* primary gold */
+  --gold-deep:  #A6863A;
+  --gold-light: #E4D29B;
+  --gold-wash:  #F4ECD8;
+  --radius:     18px;
+  --maxw:       1180px;
+  --ease:       cubic-bezier(.22,.61,.36,1);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+
+.section{ padding:clamp(4rem,9vw,9rem) clamp(1.25rem,5vw,3rem); }
+.section__head{ max-width:var(--maxw); margin:0 auto clamp(2.5rem,5vw,4rem); }
+.eyebrow{
+  font-size:.74rem; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--gold-deep); font-weight:600; margin-bottom:1.1rem;
+}
+.section__title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600; line-height:1.05;
+  font-size:clamp(2.1rem,5vw,3.6rem);
+  letter-spacing:-.01em; max-width:16ch;
+}
+.section__sub{ color:var(--ink-soft); max-width:54ch; margin-top:1.2rem; font-size:1.05rem; }
+.gold{ color:var(--gold-deep); font-style:italic; }
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.95rem 1.7rem; border-radius:100px; font-size:.92rem;
+  font-weight:500; letter-spacing:.01em; transition:.4s var(--ease);
+  border:1px solid transparent; cursor:pointer;
+}
+.btn--gold{ background:var(--ink); color:var(--paper); }
+.btn--gold:hover{ background:var(--gold-deep); transform:translateY(-2px); }
+.btn--ghost{ border-color:var(--line); color:var(--ink); background:transparent; }
+.btn--ghost:hover{ border-color:var(--gold); color:var(--gold-deep); }
+
+/* ===================== NAV ===================== */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.1rem clamp(1.25rem,5vw,3rem);
+  transition:.45s var(--ease);
+}
+.nav.is-scrolled{
+  background:rgba(251,249,244,.82);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  padding-top:.8rem; padding-bottom:.8rem;
+}
+.nav__brand{ display:flex; align-items:center; gap:.65rem; }
+.mark{ color:var(--gold-deep); display:flex; }
+.nav__name{
+  font-family:'Cormorant Garamond',serif; font-size:1.5rem;
+  font-weight:600; letter-spacing:.01em;
+}
+.nav__name-lab{ color:var(--gold-deep); font-style:italic; margin-left:.12em; }
+.nav__links{ display:flex; align-items:center; gap:2rem; }
+.nav__links a{ font-size:.92rem; color:var(--ink-soft); transition:.3s; }
+.nav__links a:hover{ color:var(--ink); }
+.nav__cta{
+  border:1px solid var(--gold); color:var(--gold-deep)!important;
+  padding:.55rem 1.1rem; border-radius:100px;
+}
+.nav__cta:hover{ background:var(--gold); color:#fff!important; }
+.nav__burger{ display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; }
+.nav__burger span{ width:24px; height:2px; background:var(--ink); transition:.3s; }
+
+/* ===================== HERO ===================== */
+.hero{
+  position:relative; min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:7rem clamp(1.25rem,5vw,3rem) 4rem;
+  overflow:hidden;
+}
+.hero__glow{
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(60% 50% at 75% 20%, var(--gold-wash) 0%, transparent 60%),
+    radial-gradient(50% 45% at 15% 85%, #fff 0%, transparent 55%);
+}
+.hero__inner{ position:relative; z-index:1; max-width:var(--maxw); margin:0 auto; width:100%; }
+.hero__title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600; letter-spacing:-.015em;
+  font-size:clamp(2.7rem,8vw,6.4rem); line-height:1.0;
+  margin:.4rem 0 1.6rem;
+}
+.hero__title .line{ display:block; overflow:hidden; }
+.hero__lead{ max-width:56ch; font-size:clamp(1.05rem,1.6vw,1.25rem); color:var(--ink-soft); }
+.hero__actions{ display:flex; gap:1rem; margin-top:2.2rem; flex-wrap:wrap; }
+.hero__scroll{
+  position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.6rem;
+  font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); z-index:1;
+}
+.hero__scroll i{ width:1px; height:46px; background:linear-gradient(var(--gold),transparent); animation:scrolldown 2s var(--ease) infinite; }
+@keyframes scrolldown{ 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 50.1%{transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+/* ===================== INTRO ===================== */
+.intro{ text-align:center; }
+.intro__statement{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,3.6vw,2.9rem); line-height:1.28;
+  max-width:1000px; margin:0 auto; color:var(--ink); font-weight:500;
+}
+.intro__statement .w{ display:inline-block; }
+
+/* ===================== STATS ===================== */
+.stats{ padding-top:0; }
+.stats__grid{
+  max-width:var(--maxw); margin:0 auto;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+  background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+}
+.stat{ background:var(--paper-2); padding:2.2rem 1.6rem; text-align:center; }
+.stat__num{ font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,5vw,3.8rem); color:var(--gold-deep); font-weight:600; }
+.stat__plus{ font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--gold); vertical-align:top; }
+.stat p{ font-size:.86rem; color:var(--ink-soft); margin-top:.4rem; }
+
+/* ===================== SERVICES ===================== */
+.cards{
+  max-width:var(--maxw); margin:0 auto;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem;
+}
+.card{
+  background:var(--paper-2); border:1px solid var(--line);
+  border-radius:var(--radius); padding:2.2rem 2rem 2.4rem;
+  transition:.45s var(--ease); position:relative;
+}
+.card:hover{ transform:translateY(-6px); border-color:var(--gold-light); box-shadow:0 24px 50px -28px rgba(166,134,58,.35); }
+.card__no{ font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--gold); display:block; margin-bottom:1rem; }
+.card h3{ font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:600; line-height:1.15; margin-bottom:.7rem; }
+.card p{ font-size:.95rem; color:var(--ink-soft); }
+.card--accent{ background:linear-gradient(150deg,var(--ink),#2a261d); color:var(--paper); border-color:transparent; }
+.card--accent h3{ color:var(--gold-light); }
+.card--accent p{ color:#d8d2c4; }
+.card__link{ display:inline-block; margin-top:1.2rem; color:var(--gold-light); font-size:.9rem; font-weight:500; }
+.card__link:hover{ color:#fff; }
+
+/* ===================== ABOUT ===================== */
+.about__grid{
+  max-width:var(--maxw); margin:0 auto;
+  display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,5vw,4.5rem); align-items:center;
+}
+.about__media{ position:relative; }
+.about__portrait{
+  aspect-ratio:4/5; border-radius:var(--radius);
+  background:linear-gradient(160deg,var(--gold-wash),#fff);
+  border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--muted); text-align:center; font-size:1rem;
+}
+.about__portrait small{ font-size:.78rem; }
+.about__badge{
+  position:absolute; bottom:-1.1rem; left:-1.1rem;
+  background:var(--ink); color:var(--paper);
+  padding:1rem 1.4rem; border-radius:14px; box-shadow:0 18px 40px -20px rgba(0,0,0,.5);
+}
+.about__badge strong{ font-family:'Cormorant Garamond',serif; font-size:1.25rem; display:block; }
+.about__badge span{ font-size:.8rem; color:var(--gold-light); }
+.about__copy p{ color:var(--ink-soft); margin-bottom:1.1rem; font-size:1.02rem; }
+.about__copy .section__title{ margin-bottom:1.4rem; }
+.about__list{ list-style:none; margin-top:1.4rem; display:grid; grid-template-columns:1fr 1fr; gap:.6rem 1.4rem; }
+.about__list li{ position:relative; padding-left:1.4rem; font-size:.92rem; color:var(--ink); }
+.about__list li::before{ content:""; position:absolute; left:0; top:.6em; width:7px; height:7px; border-radius:50%; background:var(--gold); }
+
+/* ===================== WORK ===================== */
+.work__list{ max-width:var(--maxw); margin:0 auto; border-top:1px solid var(--line); }
+.work__item{
+  display:grid; grid-template-columns:.5fr 1fr; gap:2rem;
+  padding:2rem 0; border-bottom:1px solid var(--line); transition:.4s var(--ease);
+}
+.work__item:hover{ padding-left:1rem; }
+.work__client h3{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; }
+.work__client span{ font-size:.8rem; letter-spacing:.06em; text-transform:uppercase; color:var(--gold-deep); }
+.work__item p{ color:var(--ink-soft); font-size:1rem; }
+
+/* ===================== MARQUEE ===================== */
+.marquee{ padding:2.5rem 0; border-block:1px solid var(--line); overflow:hidden; }
+.marquee__track{
+  display:flex; gap:2.4rem; align-items:center; white-space:nowrap;
+  font-family:'Cormorant Garamond',serif; font-size:1.7rem; color:var(--ink-soft);
+  width:max-content; animation:marquee 38s linear infinite;
+}
+.marquee__track span:nth-child(even){ color:var(--gold); }
+@keyframes marquee{ to{ transform:translateX(-50%); } }
+
+/* ===================== APPROACH ===================== */
+.approach__steps{
+  max-width:var(--maxw); margin:0 auto;
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem;
+}
+.step{ padding:2rem 1.6rem; border:1px solid var(--line); border-radius:var(--radius); background:var(--paper-2); }
+.step__no{ font-family:'Cormorant Garamond',serif; font-size:2.2rem; color:var(--gold-light); display:block; margin-bottom:.6rem; }
+.step h3{ font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; margin-bottom:.5rem; }
+.step p{ font-size:.92rem; color:var(--ink-soft); }
+
+/* ===================== CONTACT ===================== */
+.contact{ background:linear-gradient(160deg,var(--ink),#26221a); color:var(--paper); text-align:center; border-radius:var(--radius); margin:0 clamp(.75rem,3vw,2rem) 2rem; }
+.contact .eyebrow{ color:var(--gold-light); }
+.contact__title{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2.2rem,5.5vw,4rem); line-height:1.05; max-width:18ch; margin:0 auto 1.2rem; }
+.contact__sub{ color:#d8d2c4; max-width:50ch; margin:0 auto; }
+.contact__actions{ display:flex; gap:1rem; justify-content:center; margin:2.2rem 0 1.4rem; flex-wrap:wrap; }
+.contact .btn--gold{ background:var(--gold); color:var(--ink); }
+.contact .btn--gold:hover{ background:var(--gold-light); }
+.contact .btn--ghost{ border-color:rgba(255,255,255,.25); color:var(--paper); }
+.contact .btn--ghost:hover{ border-color:var(--gold-light); color:var(--gold-light); }
+.contact__meta{ font-size:.85rem; color:var(--muted); }
+
+/* ===================== FOOTER ===================== */
+.footer{
+  max-width:var(--maxw); margin:0 auto; padding:3.5rem clamp(1.25rem,5vw,3rem) 3rem;
+  display:grid; grid-template-columns:1.4fr 1fr; gap:2rem;
+}
+.footer__brand .nav__name{ font-size:1.7rem; }
+.footer__brand p{ color:var(--ink-soft); margin-top:.6rem; max-width:30ch; }
+.footer__cols{ display:flex; gap:3rem; justify-content:flex-end; }
+.footer__cols h4{ font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); margin-bottom:.9rem; }
+.footer__cols a{ display:block; color:var(--ink-soft); font-size:.92rem; margin-bottom:.5rem; transition:.3s; }
+.footer__cols a:hover{ color:var(--ink); }
+.footer__copy{ grid-column:1/-1; border-top:1px solid var(--line); padding-top:1.5rem; font-size:.82rem; color:var(--muted); }
+
+/* ===================== REVEAL ANIM ===================== */
+.reveal{ opacity:0; transform:translateY(26px); }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width:980px){
+  .cards{ grid-template-columns:1fr 1fr; }
+  .stats__grid{ grid-template-columns:1fr 1fr; }
+  .approach__steps{ grid-template-columns:1fr 1fr; }
+  .about__grid{ grid-template-columns:1fr; }
+  .about__media{ max-width:360px; }
+}
+@media (max-width:680px){
+  .nav__links{
+    position:fixed; inset:0 0 0 auto; width:min(78vw,320px);
+    flex-direction:column; align-items:flex-start; justify-content:center;
+    gap:1.6rem; padding:2rem; background:var(--paper-2);
+    transform:translateX(100%); transition:.45s var(--ease); box-shadow:-20px 0 50px -30px rgba(0,0,0,.4);
+  }
+  .nav__links.is-open{ transform:translateX(0); }
+  .nav__burger{ display:flex; z-index:60; }
+  .cards{ grid-template-columns:1fr; }
+  .stats__grid{ grid-template-columns:1fr 1fr; }
+  .approach__steps{ grid-template-columns:1fr; }
+  .work__item{ grid-template-columns:1fr; gap:.6rem; }
+  .footer{ grid-template-columns:1fr; }
+  .footer__cols{ justify-content:flex-start; gap:2.5rem; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none!important; transition:none!important; }
+  .reveal{ opacity:1; transform:none; }
+}
+
+</style>
+
+<div class="comuno-lab">
+<header class="nav" id="nav">
+    <a href="#top" class="nav__brand" aria-label="Comuno Lab home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="34" height="34">
+          <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="24" cy="24" r="13" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="37" cy="24" r="2.4" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="nav__name">Comuno<span class="nav__name-lab">Lab</span></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#work">Experience</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact" class="nav__cta">Let's talk</a>
+    </nav>
+
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="eyebrow reveal">Boutique marketing &amp; communications · Cologne · Cyprus · Europe</p>
+        <h1 class="hero__title">
+          <span class="line">Marketing &amp; communication</span>
+          <span class="line">that moves <span class="gold">people</span></span>
+          <span class="line">— and <span class="gold">organisations.</span></span>
+        </h1>
+        <p class="hero__lead reveal">
+          Comuno Lab is a boutique agency for content, social media, communications and
+          change — senior strategy paired with a small, dedicated team. German roots,
+          European reach, delivered in English.
+        </p>
+        <div class="hero__actions reveal">
+          <a href="#contact" class="btn btn--gold">Start a conversation</a>
+          <a href="#services" class="btn btn--ghost">What we do</a>
+        </div>
+      </div>
+      <div class="hero__scroll reveal" aria-hidden="true">
+        <span>Scroll</span><i></i>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO / POSITIONING ===================== -->
+    <section class="intro section" id="intro">
+      <p class="intro__statement reveal-lines">
+        We help ambitious teams tell clearer stories, run sharper campaigns and
+        guide change that actually lands — from fast-moving brands to enterprise
+        transformation. Big-agency thinking, without the big-agency overhead.
+      </p>
+    </section>
+
+    <!-- ===================== STATS ===================== -->
+    <section class="stats section">
+      <div class="stats__grid">
+        <div class="stat reveal"><span class="stat__num" data-count="20">0</span><span class="stat__plus">+</span><p>years across marketing &amp; communications</p></div>
+        <div class="stat reveal"><span class="stat__num" data-count="50">0</span><span class="stat__plus">+</span><p>brands &amp; organisations supported</p></div>
+        <div class="stat reveal"><span class="stat__num" data-count="12">0</span><span class="stat__plus">+</span><p>industries, from FMCG to enterprise IT</p></div>
+        <div class="stat reveal"><span class="stat__num" data-count="3">0</span><span class="stat__plus"></span><p>languages — EN · DE · across Europe</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="services section" id="services">
+      <header class="section__head">
+        <p class="eyebrow reveal">What we do</p>
+        <h2 class="section__title reveal">Five ways we partner with you</h2>
+        <p class="section__sub reveal">
+          Engage us for one, or as your fractional in-house team. Every engagement is
+          led by senior hands and scaled with a trusted specialist team.
+        </p>
+      </header>
+
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card__no">01</span>
+          <h3>Content &amp; Social Media Marketing</h3>
+          <p>Strategy, editorial, channel management and campaigns that build audiences
+             and move them to act — including influencer and community work.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__no">02</span>
+          <h3>Marketing &amp; Communications Management</h3>
+          <p>Brand strategy, corporate and internal communications, and end-to-end
+             campaign management across complex, multi-market organisations.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__no">03</span>
+          <h3>Change &amp; Transformation Communication</h3>
+          <p>Organisational Change Management (OCM) for digital and SAP rollouts —
+             leadership messaging, end-user enablement, intranet &amp; newsletter programmes.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__no">04</span>
+          <h3>Interim Management</h3>
+          <p>Step-in leadership as your Interim CMO, Marketing or Communications Lead —
+             stabilising, restructuring and delivering while you hire.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__no">05</span>
+          <h3>AI &amp; Marketing Automation</h3>
+          <p>Practical AI: chatbots, automated funnels and CRM workflows (n8n, Make,
+             Salesforce) that make small teams move like big ones.</p>
+        </article>
+        <article class="card card--accent reveal">
+          <h3>One team, any size of company</h3>
+          <p>From founders and SMEs to enterprise marketing departments — we plug in
+             with a small senior team and scale to the brief.</p>
+          <a href="#contact" class="card__link">Tell us your challenge →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about section" id="about">
+      <div class="about__grid">
+        <div class="about__media reveal">
+          <div class="about__portrait" role="img" aria-label="Suparni Neuwirth, founder of Comuno Lab">
+            <span>Your photo<br><small>add here</small></span>
+          </div>
+          <div class="about__badge">
+            <strong>Suparni Neuwirth</strong>
+            <span>Founder &amp; Lead Strategist</span>
+          </div>
+        </div>
+        <div class="about__copy">
+          <p class="eyebrow reveal">The lab behind the work</p>
+          <h2 class="section__title reveal">Senior expertise, a small team, real accountability.</h2>
+          <p class="reveal">
+            Comuno Lab is led by <strong>Suparni Neuwirth</strong>, a digital marketing and
+            communications specialist with 20+ years across content, CRM, brand and change.
+            She has built and steered campaigns for brands like <em>Miele, Heinemann, Douglas,
+            Vaillant and Lichtblick</em>, and today focuses on the work that needs the most
+            judgement: communications for complex transformation, and senior interim leadership.
+          </p>
+          <p class="reveal">
+            Around her, Comuno Lab brings in a trusted circle of specialists — design, social,
+            automation and copy — so clients get the seniority of a consultant with the
+            delivery power of an agency. Fluent in German and English, working across Europe.
+          </p>
+          <ul class="about__list reveal">
+            <li>Content, CRM &amp; lifecycle marketing</li>
+            <li>Corporate, internal &amp; change communication</li>
+            <li>Agile, stakeholder-heavy enterprise programmes</li>
+            <li>AI &amp; marketing automation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE / WORK ===================== -->
+    <section class="work section" id="work">
+      <header class="section__head">
+        <p class="eyebrow reveal">Selected experience</p>
+        <h2 class="section__title reveal">Recent, high-stakes engagements</h2>
+      </header>
+
+      <div class="work__list">
+        <article class="work__item reveal">
+          <div class="work__client"><h3>Liebherr</h3><span>Change Communication · OCM</span></div>
+          <p>Communications specialist for organisational change management on one of
+             Europe's largest SAP rollouts — coordinating leadership messaging, end-user
+             communication, the SharePoint platform, newsletters and executive presentations.</p>
+        </article>
+        <article class="work__item reveal">
+          <div class="work__client"><h3>FSC (NGO)</h3><span>Digital &amp; Social Media Programme</span></div>
+          <p>Social media / digital programme manager for the Forest Stewardship Council,
+             leading a small social team through a mission-driven, highly visible agenda.</p>
+        </article>
+        <article class="work__item reveal">
+          <div class="work__client"><h3>DATAGROUP SE</h3><span>SAP Web Relaunch · Digital Marketing</span></div>
+          <p>Project manager for the SAP-services website relaunch — web architecture aligned
+             to the customer journey, internal-linking &amp; SEO strategy, and cross-unit
+             stakeholder management.</p>
+        </article>
+        <article class="work__item reveal">
+          <div class="work__client"><h3>Heinemann</h3><span>CRM · Customer Lifecycle</span></div>
+          <p>CRM manager integrating shop and app touchpoints with Salesforce Marketing Cloud,
+             lifting engagement KPIs by 18% through segmentation and automated campaigns.</p>
+        </article>
+        <article class="work__item reveal">
+          <div class="work__client"><h3>Miele</h3><span>International Content · E-commerce</span></div>
+          <p>International content manager across global webshops and subsidiaries, working in
+             a cross-country matrix on SAP Commerce, landing pages and campaign localisation.</p>
+        </article>
+        <article class="work__item reveal">
+          <div class="work__client"><h3>Commtribe</h3><span>AI &amp; Automation</span></div>
+          <p>Designing AI-driven communication and marketing automation — intelligent chatbots
+             and n8n/Make workflows for lead nurturing, events and funnels.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== CLIENTS MARQUEE ===================== -->
+    <section class="marquee section" aria-label="Brands worked with">
+      <div class="marquee__track">
+        <span>Liebherr</span><span>·</span><span>Miele</span><span>·</span><span>Heinemann</span><span>·</span>
+        <span>Douglas</span><span>·</span><span>Breuninger</span><span>·</span><span>Vaillant</span><span>·</span>
+        <span>Lichtblick</span><span>·</span><span>Aareal Bank</span><span>·</span><span>VORWERK Thermomix</span><span>·</span>
+        <span>DATAGROUP</span><span>·</span><span>Sopra Steria</span><span>·</span><span>FSC</span><span>·</span>
+        <span>Flower Council Holland</span><span>·</span>
+        <!-- duplicate for seamless loop -->
+        <span>Liebherr</span><span>·</span><span>Miele</span><span>·</span><span>Heinemann</span><span>·</span>
+        <span>Douglas</span><span>·</span><span>Breuninger</span><span>·</span><span>Vaillant</span><span>·</span>
+        <span>Lichtblick</span><span>·</span><span>Aareal Bank</span><span>·</span><span>VORWERK Thermomix</span><span>·</span>
+        <span>DATAGROUP</span><span>·</span><span>Sopra Steria</span><span>·</span><span>FSC</span><span>·</span>
+        <span>Flower Council Holland</span><span>·</span>
+      </div>
+    </section>
+
+    <!-- ===================== APPROACH ===================== -->
+    <section class="approach section" id="approach">
+      <header class="section__head">
+        <p class="eyebrow reveal">How we work</p>
+        <h2 class="section__title reveal">A simple, senior-led process</h2>
+      </header>
+      <div class="approach__steps">
+        <div class="step reveal"><span class="step__no">01</span><h3>Listen &amp; diagnose</h3><p>We start with your goals, audience and constraints — and tell you honestly what will move the needle.</p></div>
+        <div class="step reveal"><span class="step__no">02</span><h3>Shape the plan</h3><p>A clear strategy and roadmap: channels, messaging, timeline and the right-sized team.</p></div>
+        <div class="step reveal"><span class="step__no">03</span><h3>Deliver hands-on</h3><p>We execute — content, campaigns, comms and automation — with senior eyes on quality throughout.</p></div>
+        <div class="step reveal"><span class="step__no">04</span><h3>Measure &amp; grow</h3><p>KPIs, reporting and iteration, so the work keeps compounding after launch.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT / CTA ===================== -->
+    <section class="contact section" id="contact">
+      <div class="contact__inner">
+        <p class="eyebrow reveal">Let's talk</p>
+        <h2 class="contact__title reveal">Have a brand, campaign or change to lead?</h2>
+        <p class="contact__sub reveal">
+          Tell us where you are and where you want to go. We'll reply with a clear,
+          no-pressure view on how Comuno Lab can help.
+        </p>
+        <div class="contact__actions reveal">
+          <a href="mailto:supi@commtribe.com" class="btn btn--gold">supi@commtribe.com</a>
+          <a href="https://www.linkedin.com/in/suparnineuwirth/" target="_blank" rel="noopener" class="btn btn--ghost">LinkedIn</a>
+        </div>
+        <p class="contact__meta reveal">Cologne, Germany · Paralimni, Cyprus · Working across Europe</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="nav__name">Comuno<span class="nav__name-lab">Lab</span></span>
+      <p>Marketing, communication &amp; change for European brands.</p>
+    </div>
+    <div class="footer__cols">
+      <div><h4>Explore</h4><a href="#services">Services</a><a href="#about">About</a><a href="#work">Experience</a><a href="#approach">Approach</a></div>
+      <div><h4>Contact</h4><a href="mailto:supi@commtribe.com">supi@commtribe.com</a><a href="https://www.linkedin.com/in/suparnineuwirth/" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Comuno Lab. All rights reserved.</p>
+  </footer>
+</div>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* =========================================================
+   Comuno Lab — interactions
+   GSAP + ScrollTrigger + Lenis (loaded via CDN in index.html)
+   ========================================================= */
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- Mobile menu ---------- */
+const burger = document.getElementById('burger');
+const links  = document.querySelector('.nav__links');
+burger.addEventListener('click', () => {
+  const open = links.classList.toggle('is-open');
+  burger.setAttribute('aria-expanded', open);
+});
+links.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => links.classList.remove('is-open'))
+);
+
+/* ---------- Sticky nav state ---------- */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 40);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive:true });
+
+/* ---------- Respect reduced motion ---------- */
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Smooth scroll (Lenis) ---------- */
+if (!reduce && window.Lenis) {
+  const lenis = new Lenis({ duration:1.1, smoothWheel:true });
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+
+  // anchor links -> lenis
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target){ e.preventDefault(); lenis.scrollTo(target, { offset:-10 }); }
+    });
+  });
+  if (window.gsap && window.ScrollTrigger) {
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+}
+
+/* ---------- GSAP reveal animations ---------- */
+if (!reduce && window.gsap && window.ScrollTrigger) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero lines rise in
+  gsap.set('.hero__title .line', { yPercent:120 });
+  gsap.to('.hero__title .line', {
+    yPercent:0, duration:1.1, stagger:.12, ease:'power4.out', delay:.15
+  });
+  gsap.from('.hero .reveal', {
+    opacity:0, y:24, duration:1, stagger:.12, ease:'power3.out', delay:.55,
+    onComplete(){ gsap.set('.hero .reveal', { clearProps:'opacity,transform' }); }
+  });
+
+  // Generic reveal-on-scroll
+  gsap.utils.toArray('.reveal').forEach(el => {
+    if (el.closest('.hero')) return; // handled above
+    gsap.to(el, {
+      opacity:1, y:0, duration:.9, ease:'power3.out',
+      scrollTrigger:{ trigger:el, start:'top 88%' }
+    });
+  });
+
+  // Intro statement: word-by-word fade
+  const intro = document.querySelector('.intro__statement');
+  if (intro){
+    intro.innerHTML = intro.textContent.trim().split(/\s+/)
+      .map(w => `<span class="w">${w}&nbsp;</span>`).join('');
+    gsap.from(intro.querySelectorAll('.w'), {
+      opacity:.12, duration:.6, stagger:.04, ease:'none',
+      scrollTrigger:{ trigger:intro, start:'top 80%', end:'bottom 60%', scrub:true }
+    });
+  }
+
+  // Count-up stats
+  gsap.utils.toArray('.stat__num').forEach(el => {
+    const end = +el.dataset.count;
+    const obj = { v:0 };
+    ScrollTrigger.create({
+      trigger:el, start:'top 85%', once:true,
+      onEnter(){
+        gsap.to(obj, { v:end, duration:1.6, ease:'power2.out',
+          onUpdate(){ el.textContent = Math.round(obj.v); } });
+      }
+    });
+  });
+} else {
+  // Reduced motion / no GSAP: just show everything
+  document.querySelectorAll('.reveal').forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; });
+  document.querySelectorAll('.stat__num').forEach(el => el.textContent = el.dataset.count);
+}
+
+</script>
