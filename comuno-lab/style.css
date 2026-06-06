@@ -168,13 +168,15 @@ img{ max-width:100%; display:block; }
 }
 .about__media{ position:relative; }
 .about__portrait{
-  aspect-ratio:4/5; border-radius:var(--radius);
-  background:linear-gradient(160deg,var(--gold-wash),#fff);
-  border:1px solid var(--line);
-  display:flex; align-items:center; justify-content:center;
-  color:var(--muted); text-align:center; font-size:1rem;
+  aspect-ratio:4/5; border-radius:var(--radius); overflow:hidden;
+  border:1px solid var(--line); box-shadow:0 30px 60px -34px rgba(166,134,58,.45);
 }
-.about__portrait small{ font-size:.78rem; }
+.about__portrait img{ width:100%; height:100%; object-fit:cover; }
+.about__thumbs{ display:grid; grid-template-columns:1fr 1fr; gap:.7rem; margin-top:.7rem; }
+.about__thumbs img{
+  width:100%; aspect-ratio:1/1; object-fit:cover;
+  border-radius:12px; border:1px solid var(--line);
+}
 .about__badge{
   position:absolute; bottom:-1.1rem; left:-1.1rem;
   background:var(--ink); color:var(--paper);
