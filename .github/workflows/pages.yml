@@ -1,9 +1,8 @@
 name: Deploy Comuno Lab site to GitHub Pages
 
+# Manual only — does not run automatically, so it can't email failures.
+# (Optional: only works once GitHub Pages is enabled in repo Settings → Pages.)
 on:
-  push:
-    branches:
-      - claude/comuno-lab-wordpress-site-uTbWb
   workflow_dispatch:
 
 permissions:
