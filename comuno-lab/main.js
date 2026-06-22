@@ -96,3 +96,30 @@ if (!reduce && window.gsap && window.ScrollTrigger) {
   document.querySelectorAll('.reveal').forEach(el => { el.style.opacity = 1; el.style.transform = 'none'; });
   document.querySelectorAll('.stat__num').forEach(el => el.textContent = el.dataset.count);
 }
+
+/* ---------- Contact form -> opens pre-filled email (no backend needed) ---------- */
+const form = document.getElementById('contactForm');
+if (form) {
+  const note = document.getElementById('cfNote');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => (document.getElementById(id)?.value || '').trim();
+    const name = v('cf-name'), email = v('cf-email');
+    if (!name || !email) {
+      note.textContent = 'Please add your name and email.';
+      note.classList.remove('is-ok');
+      return;
+    }
+    const subject = `New enquiry — ${v('cf-need')}`;
+    const body =
+      `Name: ${name}\n` +
+      `Email: ${email}\n` +
+      `Company: ${v('cf-company') || '—'}\n` +
+      `Interested in: ${v('cf-need')}\n\n` +
+      `${v('cf-msg')}\n`;
+    window.location.href =
+      `mailto:info@comunolab.co?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    note.textContent = 'Opening your email app… if nothing happens, write to info@comunolab.co';
+    note.classList.add('is-ok');
+  });
+}

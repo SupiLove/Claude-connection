@@ -61,9 +61,9 @@
 
     <nav class="nav__links" aria-label="Primary">
       <a href="#services">Services</a>
+      <a href="#work-with-us">Work with us</a>
       <a href="#about">About</a>
       <a href="#work">Experience</a>
-      <a href="#approach">Approach</a>
       <a href="#contact" class="nav__cta">Let's talk</a>
     </nav>
 
@@ -164,6 +164,50 @@
           <p>From founders and SMEs to enterprise marketing departments — we plug in
              with a small senior team and scale to the brief.</p>
           <a href="#contact" class="card__link">Tell us your challenge →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== WAYS TO WORK / ENGAGEMENT ===================== -->
+    <section class="engage section" id="work-with-us">
+      <header class="section__head">
+        <p class="eyebrow reveal">Ways to work with us</p>
+        <h2 class="section__title reveal">Flexible engagement, senior delivery</h2>
+        <p class="section__sub reveal">
+          Whether you need a one-off campaign or an embedded team for the year,
+          there's a way to bring Comuno Lab in at the right level.
+        </p>
+      </header>
+
+      <div class="engage__grid">
+        <article class="engage__card reveal">
+          <h3>Project</h3>
+          <p class="engage__price">Fixed scope</p>
+          <p>A defined brief, delivered end-to-end — a campaign, a launch, a website
+             relaunch or a content sprint.</p>
+          <a href="#contact" class="engage__cta">Discuss a project →</a>
+        </article>
+        <article class="engage__card engage__card--featured reveal">
+          <span class="engage__tag">Most popular</span>
+          <h3>Retainer</h3>
+          <p class="engage__price">Monthly</p>
+          <p>Your ongoing marketing &amp; communications team by the month —
+             strategy, content, social and reporting on a steady cadence.</p>
+          <a href="#contact" class="engage__cta">Start a retainer →</a>
+        </article>
+        <article class="engage__card reveal">
+          <h3>Interim</h3>
+          <p class="engage__price">Day / week rate</p>
+          <p>Senior step-in leadership — Interim CMO, Marketing or Communications
+             Lead — through transitions and transformation.</p>
+          <a href="#contact" class="engage__cta">Talk interim cover →</a>
+        </article>
+        <article class="engage__card reveal">
+          <h3>Advisory</h3>
+          <p class="engage__price">Sessions</p>
+          <p>Strategy, audits and coaching when you want senior thinking and a
+             clear plan — not full delivery.</p>
+          <a href="#contact" class="engage__cta">Book advisory →</a>
         </article>
       </div>
     </section>
@@ -285,18 +329,57 @@
 
     <!-- ===================== CONTACT / CTA ===================== -->
     <section class="contact section" id="contact">
-      <div class="contact__inner">
-        <p class="eyebrow reveal">Let's talk</p>
-        <h2 class="contact__title reveal">Have a brand, campaign or change to lead?</h2>
-        <p class="contact__sub reveal">
-          Tell us where you are and where you want to go. We'll reply with a clear,
-          no-pressure view on how Comuno Lab can help.
-        </p>
-        <div class="contact__actions reveal">
-          <a href="mailto:info@comunolab.co" class="btn btn--gold">info@comunolab.co</a>
-          <a href="https://www.linkedin.com/in/suparnineuwirth/" target="_blank" rel="noopener" class="btn btn--ghost">LinkedIn</a>
+      <div class="contact__grid">
+        <div class="contact__intro">
+          <p class="eyebrow reveal">Let's talk</p>
+          <h2 class="contact__title reveal">Have a brand, campaign or change to lead?</h2>
+          <p class="contact__sub reveal">
+            Tell us where you are and where you want to go. You'll get a clear,
+            no-pressure view on how Comuno Lab can help — usually within one working day.
+          </p>
+          <ul class="contact__points reveal">
+            <li>Senior strategist on every project</li>
+            <li>Flexible — project, retainer, interim or advisory</li>
+            <li>German &amp; English, across Europe</li>
+          </ul>
+          <div class="contact__direct reveal">
+            <a href="mailto:info@comunolab.co">info@comunolab.co</a>
+            <a href="https://www.linkedin.com/in/suparnineuwirth/" target="_blank" rel="noopener">LinkedIn →</a>
+          </div>
+          <p class="contact__meta reveal">Cologne, Germany · Paralimni, Cyprus</p>
         </div>
-        <p class="contact__meta reveal">Cologne, Germany · Paralimni, Cyprus · Working across Europe</p>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" required placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" name="email" type="email" required placeholder="you@company.com" />
+          </div>
+          <div class="field">
+            <label for="cf-company">Company <span>(optional)</span></label>
+            <input id="cf-company" name="company" type="text" placeholder="Company name" />
+          </div>
+          <div class="field">
+            <label for="cf-need">What do you need?</label>
+            <select id="cf-need" name="need">
+              <option>Content &amp; social media</option>
+              <option>Marketing &amp; communications</option>
+              <option>Change / transformation comms</option>
+              <option>Interim leadership</option>
+              <option>AI &amp; automation</option>
+              <option>Not sure yet — let's talk</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="message" rows="4" placeholder="A sentence or two about your goal…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--gold contact__submit">Send message</button>
+          <p class="contact__note" id="cfNote">Opens your email app, pre-filled to info@comunolab.co.</p>
+        </form>
       </div>
     </section>
   </main>

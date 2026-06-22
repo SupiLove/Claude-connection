@@ -37,6 +37,25 @@ CDN, so an internet connection is needed for the animations.
 - **Email** — `supi@commtribe.com` (replace if you set up a Comuno Lab address)
 - Optional: German-language version of the page
 
+## Easiest: one file, any host (no WordPress)
+
+`comuno-lab-website.html` is the **entire site in a single file** — styles,
+scripts and photos are all embedded. To put it online:
+
+- **Your own hosting:** rename it to `index.html` and upload it to your web
+  space (via the host's File Manager or FTP) into the public folder
+  (`public_html` / `www` / `htdocs`). Done.
+- **Instant & free — Netlify Drop:** go to **app.netlify.com/drop** and drag
+  the file onto the page. It's live on a URL in seconds (you can point your
+  own domain at it later).
+- **Cloudflare Pages / GitHub Pages** also work the same way.
+
+Rebuild it after editing the source with: `node build.mjs`
+
+The contact form opens a pre-filled email to `info@comunolab.co` — works on any
+static host with no backend. (Upgrade path: point the `<form>` at a service like
+Formspree for a proper inbox.)
+
 ## Porting into WordPress
 
 Three clean routes, easiest first:
